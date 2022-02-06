@@ -10,5 +10,4 @@
             <package name="org.selenium.tests"></package>
         </packages>
     </test>
-
 </suite>
