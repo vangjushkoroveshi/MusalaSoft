@@ -10,11 +10,12 @@ public class DriverManager {
     public WebDriver initializeDriver(){
 
         WebDriver driver;
+        String browser = System.getProperty("browser", ConfigLoader.getInstance().getBrowser());
 
-        if (ConfigLoader.getInstance().getBrowser().equalsIgnoreCase("chrome")){
+        if (browser.equalsIgnoreCase("chrome")){
             WebDriverManager.chromedriver().cachePath("Drivers").setup();
             driver = new ChromeDriver();
-        } else if(ConfigLoader.getInstance().getBrowser().equalsIgnoreCase("firefox")){
+        } else if(browser.equalsIgnoreCase("firefox")){
             WebDriverManager.firefoxdriver().cachePath("Drivers").setup();
             driver = new FirefoxDriver();
         } else {
